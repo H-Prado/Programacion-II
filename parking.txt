@@ -1,0 +1,6 @@
+# zonas ‘A’-‘F’, cada una con 10 plazas. Las zonas ‘E’ y ‘F’ para eléctricos
+F;10;E
+
+# coches aparcados
+A4;1234BCD
+C9;5678FGH
