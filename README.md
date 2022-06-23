@@ -1,5 +1,5 @@
 # Programacion-II
 Prácticas Programación II
 
-#Autor
+Autor:
 Hugo Prado Sueiro
