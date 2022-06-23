@@ -51,7 +51,7 @@ public class Parking {
 //                System.out.println("MZ: "+maxZone+" SZ: "+siteZone+" LEZ: "+lowerElectricZone+" CSM: "+ carSpaces.length + "x"+carSpaces[0].length);
                 for(int x = 0; x<carSpaces.length; x++){
                     for(int y = 0; y<carSpaces[0].length; y++) {
-                        this.carSpaces[x][y] = new CarSpace(new Coordinate((char)(x+65),y), null);
+                        this.carSpaces[x][y] = new CarSpace(new Coordinate((char)(x+65),y+1), null);
 //                        System.out.println(carSpaces[x][y].toText());
                     }
                 }
@@ -85,20 +85,22 @@ public class Parking {
 
     public void carEntry (String plate, char Type){
         if(Type != 'C') {
-            for (int x = (int)lowerElectricZone-64; x < carSpaces.length; x++) {
+            for (int x = (int)lowerElectricZone-65; x < carSpaces.length; x++) {
                 for (int y = 0; y < carSpaces[0].length; y++) {
-                    if (carSpaces[x][y].getPlate() == null)
+                    if (carSpaces[x][y].getPlate() == null) {
                         carSpaces[x][y] = new CarSpace(carSpaces[x][y].getCoordinate(), plate);
-                    return;
+                        return;
+                    }
                 }
             }
         }
         else{
             for (int x = 0; x < (int)lowerElectricZone-64; x++) {
                 for (int y = 0; y < carSpaces[0].length; y++) {
-                    if (carSpaces[x][y].getPlate() == null)
+                    if (carSpaces[x][y].getPlate() == null){
                         carSpaces[x][y] = new CarSpace(carSpaces[x][y].getCoordinate(), plate);
-                    return;
+                        return;
+                    }
                 }
             }
         }
@@ -107,7 +109,10 @@ public class Parking {
     public void carDeparture (String plate){
         for(int x = 0; x<carSpaces.length; x++){
             for(int y = 0; y<carSpaces[0].length; y++) {
-                if(carSpaces[x][y].getPlate().matches(plate)) carSpaces[x][y] = new CarSpace(carSpaces[x][y].getCoordinate(), null);
+                if(carSpaces[x][y].getPlate() != null && carSpaces[x][y].getPlate().matches(plate)) {
+                    carSpaces[x][y] = new CarSpace(carSpaces[x][y].getCoordinate(), null);
+                    return;
+                }
             }
         }
     }

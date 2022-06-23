@@ -18,8 +18,12 @@ public class P3b {
         while (scanner.hasNextLine()){
             entrada = scanner.nextLine();
             partes = entrada.split(";");
-            if(partes[0].matches("I")) parking.carEntry(partes[1], partes[2].charAt(0));
-            if(partes[0].matches("0")) parking.carDeparture(partes[1]);
+            if(partes[0].matches("I")) {
+                parking.carEntry(partes[1], partes[2].charAt(0));
+            }
+            if(partes[0].matches("O")){
+                parking.carDeparture(partes[1]);
+            }
         }
 
         parking.saveParking(file3);
