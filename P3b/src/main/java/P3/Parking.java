@@ -40,14 +40,14 @@ public class Parking {
         boolean inicio = true;
         String[] partes;
 
-        while (scanner.hasNextLine() && inicio == true){
+        while (scanner.hasNextLine() && inicio){
             entrada = scanner.nextLine();
             if(!entrada.startsWith("#") && !entrada.isEmpty()){
                 partes = entrada.split(";");
                 this.maxZone = entrada.charAt(0);
                 this.siteZone = Integer.parseInt(partes[1]);
                 this.lowerElectricZone = partes[2].charAt(0);
-                this.carSpaces = new CarSpace[((int)(maxZone))-64][siteZone-1];
+                this.carSpaces = new CarSpace[((int)(maxZone))-64][siteZone];
 //                System.out.println("MZ: "+maxZone+" SZ: "+siteZone+" LEZ: "+lowerElectricZone+" CSM: "+ carSpaces.length + "x"+carSpaces[0].length);
                 for(int x = 0; x<carSpaces.length; x++){
                     for(int y = 0; y<carSpaces[0].length; y++) {
@@ -66,7 +66,7 @@ public class Parking {
                 partes = entrada.split(";");
                 char letraPlaza = partes[0].charAt(0);
                 int numeroPlaza = Integer.parseInt(partes[0].substring(1,partes[0].length()));
-                this.carSpaces[(int)(letraPlaza)-64][numeroPlaza-1] = new CarSpace(new Coordinate(letraPlaza,numeroPlaza), partes[1]);
+                this.carSpaces[(int)(letraPlaza)-65][numeroPlaza-1] = new CarSpace(new Coordinate(letraPlaza,numeroPlaza), partes[1]);
             }
         }
     }
