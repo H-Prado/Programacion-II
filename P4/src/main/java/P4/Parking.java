@@ -143,10 +143,8 @@ public class Parking {
         for(int x = (int) (lowerElectricZone - 65); x< carSpaces.length; x++){
             mapa = mapa + "\n";
             for(int y = 0; y<carSpaces[0].length; y++) {
-                if(((ElectricCarSpace)carSpaces[x][y]).getEstado()) estadoCargador = "ON";
-                else estadoCargador = "OFF";
-                if(carSpaces[x][y].getPlate() != null) mapa = mapa + carSpaces[x][y].getCoordinate().toText() + " E " + carSpaces[x][y].getPlate() + " " + estadoCargador + "  |";
-                else mapa = mapa + carSpaces[x][y].getCoordinate().toText() + " E         " + estadoCargador + " |";
+                if(carSpaces[x][y].getPlate() != null) mapa = mapa + carSpaces[x][y].getCoordinate().toText() + " E " + carSpaces[x][y].getPlate() + " ON  |";
+                else mapa = mapa + carSpaces[x][y].getCoordinate().toText() + " E         OFF |";
             }
         }
         return mapa;
