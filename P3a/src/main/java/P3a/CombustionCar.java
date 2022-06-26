@@ -1,8 +1,6 @@
-package P3;
+package P3a;
 
 public class CombustionCar {
-    private static final float maxBatteryCharge = 100.0F;
-    private static final float minBatteryCharge = 0.0F;
     private static final String PLATE_FORMAT = "^\\d{4}[A-Z]{3}$";
     private static int maxMechanicalPower = 500;
     private static int minMechanicalPower = 60;

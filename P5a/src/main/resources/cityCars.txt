@@ -1,0 +1,18 @@
+#Iteracion1 - todos incorrectos
+#Mal formato matricula
+C;1111AaA;Seat;100;150
+#Potencia excedida
+E;2222BBB;Peugeot;1160;17,5
+#Capacidad bateria excedida
+H;3333CCC;Ford;130;70;555,5
+
+#Iteracion 2
+C;4444DDD;Ferrari;100
+E;5555EEE;Lamborghini;90;35,4
+H;6666FFF;RangeRover;80;70;55,5
+H;7227FFF;Subaru;87;66;30.0F
+
+#Iteracion 3
+C;7777GGG;Mustang;100;150
+E;8888HHH;Nissan;750;65
+H;9999III;Suzuki;90;70;55,5

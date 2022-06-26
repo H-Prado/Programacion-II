@@ -70,7 +70,7 @@ public class Parking {
                 partes = entrada.split(";");
                 char letraPlaza = partes[0].charAt(0);
                 int numeroPlaza = Integer.parseInt(partes[0].substring(1,partes[0].length()));
-                this.carSpaces[(int)(letraPlaza)-65][numeroPlaza-1] = new CarSpace(new Coordinate(letraPlaza,numeroPlaza), partes[1], partes[3]);
+                this.carSpaces[(int)(letraPlaza)-65][numeroPlaza-1] = new CarSpace(new Coordinate(letraPlaza,numeroPlaza), partes[1], partes[2]);
             }
         }
     }

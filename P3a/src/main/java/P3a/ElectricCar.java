@@ -1,4 +1,4 @@
-package P3;
+package P3a;
 
 public class ElectricCar {
     private static final float maxBatteryCharge = 100.0F;
