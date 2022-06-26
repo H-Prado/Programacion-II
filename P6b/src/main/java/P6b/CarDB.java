@@ -111,14 +111,15 @@ public class CarDB {
 
 
 //        Imprimimos la lista no ordenada
-        System.out.println("\n\nLista NO ordenada:");
-        for(int x = 0; x < cityCarsAux.size(); x++) System.out.println(cityCarsAux.get(x));
+//        System.out.println("\n\nLista NO ordenada:");
+//        for(int x = 0; x < cityCarsAux.size(); x++) System.out.println(cityCarsAux.get(x));
         Collections.sort(cityCarsAux);
 //        Imprimimos la lista ordenada por bateria y luego por matricula
-        System.out.println("\n\nLista ordenada por MATRÍCULA:");
-        for(int x = 0; x < cityCarsAux.size(); x++) System.out.println(cityCarsAux.get(x));
+//        System.out.println("\n\nLista ordenada por MATRÍCULA:");
+//        for(int x = 0; x < cityCarsAux.size(); x++) System.out.println(cityCarsAux.get(x));
 
-
+        cityCars.clear();
+        for(int x = 0; x < cityCarsAux.size(); x++) cityCars.put(cityCarsAux.get(x).getPlate(), cityCarsAux.get(x));
     }
 
     public void sortByBatteryChargeAndPlate(){
@@ -135,8 +136,11 @@ public class CarDB {
 
 //        Imprimimos la lista ordenada por bateria y luego por matricula
         Collections.sort(cityCarsAux,comparador);
-        System.out.println("\n\nLista ordenada por BATERÍA y luego por MATRÍCULA:");
-        for(int x = 0; x < cityCarsAux.size(); x++) System.out.println(cityCarsAux.get(x));
+//        System.out.println("\n\nLista ordenada por BATERÍA y luego por MATRÍCULA:");
+//        for(int x = 0; x < cityCarsAux.size(); x++) System.out.println(cityCarsAux.get(x));
+
+        cityCars.clear();
+        for(int x = 0; x < cityCarsAux.size(); x++) cityCars.put(cityCarsAux.get(x).getPlate(), cityCarsAux.get(x));
 
     }
 }

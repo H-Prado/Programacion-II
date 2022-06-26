@@ -2,6 +2,7 @@ package P6b;
 
 public class HybridCar extends Car {
     private static final String PLATE_FORMAT = "^\\d{4}[A-Z]{3}$";
+    private final static float BATTERY_CAPACITY = 100.0F;
     private static final long serialVersionUID = 7558906366093469276L;
     private int electricPower;
     private int mechanicalPower;
@@ -50,8 +51,10 @@ public class HybridCar extends Car {
         this.batteryCharge = batteryCharge;
     }
 
-    public void increaseBatteryLevelCharge (float increment){
-        this.batteryCharge = this.batteryCharge + increment;
+    public void increaseBatteryLevelCharge (float chargeTime){
+        float bateriaAux = this.batteryCharge + ((chargeTime * (new ElectricCharger().getPower())) / BATTERY_CAPACITY) * 100;
+        if(bateriaAux < 100.0F) this.batteryCharge = bateriaAux;
+        else this.batteryCharge = 100.0F;
     }
 
     public boolean isValidElectricPower(int electricPower){

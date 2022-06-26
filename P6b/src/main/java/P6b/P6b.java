@@ -15,22 +15,23 @@ public class P6b {
 
         //Creamos la base de datos de los coches a partir de cityCars
         cdb.readCityCarsFile(file4);
-        System.out.println("Total power =" + cdb.computeTotalPower());
-        System.out.println("median Battery Charge Level = " + cdb.computeAverageBatteryLevel());
+//        System.out.println("Total power =" + cdb.computeTotalPower());
+//        System.out.println("median Battery Charge Level = " + cdb.computeAverageBatteryLevel());
 
         miparking = new Parking(file1);
         new P6b().processIO(file2);
-        System.out.println(miparking.toMap());
+//        System.out.println(miparking.toMap());
 
         miparking.saveParking(file3);
 
+        cdb.sortByPlate();
         cdb.saveCarsToFile(file5);
+
         PrintWriter printWriter = new PrintWriter(new File(file6));
         printWriter.println(miparking.toMap());
         printWriter.close();
 
-        cdb.sortByPlate();
-        cdb.sortByBatteryChargeAndPlate();
+//        cdb.sortByBatteryChargeAndPlate();
     }
 
     public void processIO (String filename) throws FileNotFoundException {
@@ -44,7 +45,6 @@ public class P6b {
             if (!entrada.startsWith("#")) {
                 partes = entrada.split(";");
                 carAux = cdb.getCarFromPlate(partes[1]);
-                carAux.toString();
                 switch (partes[0]){
                     case "I":
                         tiempoEntrada = partes[2];
